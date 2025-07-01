@@ -1,15 +1,17 @@
 import React from 'react';
-import pizzaData from '../PizzaData';
 
-function Pizza() {
-  const pizza = pizzaData[0];
-
+function Pizza({ pizzaType }) {
   return (
-    <div>
-      <img src='pizzas/focaccia.jpg' alt='focaccia'></img>
-      <h2>{pizza.name}</h2>
-      <p>{pizza.ingredients}</p>
-    </div>
+    <li className={pizzaType.soldOut ? 'pizza sold-out' : 'pizza '}>
+      <img src={pizzaType.photoName} alt={pizzaType.name}></img>
+      <div>
+        <h3>{pizzaType.name}</h3>
+        <p>{pizzaType.ingredients}</p>
+        <span>
+          {pizzaType.soldOut ? 'SOLD OUT' : `${Number(pizzaType.price)} Euros`}
+        </span>
+      </div>
+    </li>
   );
 }
 

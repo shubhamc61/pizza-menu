@@ -1,7 +1,12 @@
 import React from 'react';
+import '../index.css';
 
 function Header() {
-  return <h1 className='header'>Shubham Pizza</h1>;
+  return (
+    <header className='header'>
+      <h1>Shubham's Pizza</h1>;
+    </header>
+  );
 }
 
 export default Header;
